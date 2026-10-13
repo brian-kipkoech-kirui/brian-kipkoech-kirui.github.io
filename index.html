@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brian Kipkoech Kirui — Software Engineer</title>
+  <meta name="description" content="Brian Kipkoech Kirui — Software Engineer | Systems Developer | C++ | Data Engineering | Financial Engineering" />
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">Brian Kipkoech Kirui</a>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#notes">Engineering Notes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Building Systems. Engineering Solutions. Turning Complex Problems into Software.</h1>
+          <p class="subtitle">Software developer focused on systems engineering, C++, backend architecture, data-intensive applications, and quantitative financial modelling.</p>
+
+          <p class="intro">I design and implement reliable software systems, deterministic simulations, and data-driven engineering solutions. My work spans C++ systems engineering, backend services, data pipelines, and financial modelling.</p>
+
+          <p class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="https://github.com/brian-kipkoech-kirui" target="_blank" rel="noreferrer">GitHub Profile</a>
+            <a class="btn" id="download-cv" href="/docs/CV.pdf">Download CV</a>
+            <a class="btn" href="#contact">Contact Me</a>
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <svg width="360" height="220" viewBox="0 0 360 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+            <rect width="360" height="220" rx="10" fill="#0f1720" />
+            <g transform="translate(18,18)">
+              <rect x="0" y="0" width="120" height="40" rx="6" fill="#0b1220" stroke="#2b5568"/>
+              <rect x="0" y="60" width="320" height="120" rx="6" fill="#071018" stroke="#17394a"/>
+              <g transform="translate(8,72)" fill="#77c0ff" opacity="0.95">
+                <rect x="0" y="0" width="64" height="8" rx="2"/>
+                <rect x="0" y="18" width="180" height="6" rx="2"/>
+                <rect x="0" y="34" width="110" height="6" rx="2"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div>
+            <h3>Systems Development</h3>
+            <ul>
+              <li>C++</li>
+              <li>Object-Oriented Design</li>
+              <li>Data Structures & Algorithms</li>
+              <li>Memory Management</li>
+              <li>Multithreading & Concurrency</li>
+              <li>Performance Optimization</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Backend & Infrastructure</h3>
+            <ul>
+              <li>REST APIs</li>
+              <li>Database Design & SQL</li>
+              <li>Linux</li>
+              <li>Git & CMake</li>
+              <li>Build Systems & Testing</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Data Science & AI</h3>
+            <ul>
+              <li>Python</li>
+              <li>Machine Learning</li>
+              <li>Statistical Modelling</li>
+              <li>Data Engineering</li>
+              <li>Predictive Modelling</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Financial Engineering</h3>
+            <ul>
+              <li>Derivatives Pricing</li>
+              <li>Stochastic Processes</li>
+              <li>Monte Carlo Simulation</li>
+              <li>Risk Modelling</li>
+              <li>Financial Time Series Analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Featured Projects</h2>
+
+        <article class="project-card featured">
+          <div class="project-meta">
+            <h3>SYNTHIA — Deterministic World Simulation & Financial Intelligence Engine</h3>
+            <p class="muted">C++ • Data Fabric • Deterministic Ingestion • Financial WorldState</p>
+          </div>
+          <div class="project-body">
+            <p>SYNTHIA is a C++-first financial data and modelling platform that focuses on deterministic ingestion, provenance, and a knowledge-driven WorldState. It provides provider-neutral adapters (e.g., Yahoo, Finnhub) and a replayable ingestion session model. The project includes a headless C++ engine plus a lightweight web observatory for visualization.</p>
+
+            <h4>Technical architecture</h4>
+            <ul>
+              <li>Core data and world state: C++ native engine</li>
+              <li>Ingestion adapters: provider-neutral FinancialDataSource implementations</li>
+              <li>FinancialDataFabric: validation, deduplication, provenance</li>
+              <li>Replayable ingestion sessions and a browser observatory (HTTP API)</li>
+            </ul>
+
+            <h4>How to run (from the repository)</h4>
+            <pre><code>cmake -S . -B build
+cmake --build build -j2
+./build/synthia_dashboard
+# or run the finance ingestion CLI
+./build/synthia_finance --provider yahoo --symbol AAPL --period 1d --record ingestion_session.json</code></pre>
+
+            <p class="links"><a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank">Repository →</a></p>
+          </div>
+        </article>
+
+        <div id="repos-list" class="projects-grid">
+          <!-- populated by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Professional Experience & Education</h2>
+        <div class="two-col">
+          <div>
+            <h3>Professional profile</h3>
+            <p>I have worked in enterprise ICT support, e-learning systems administration, and application support. My responsibilities have covered systems administration, database and student management systems, SAP Student Management and Finance modules, and supporting institutional digital infrastructure.</p>
+          </div>
+          <div>
+            <h3>Education</h3>
+            <p>MSc Financial Engineering — WorldQuant University (as stated on my profile)</p>
+            <p>BSc Computer Science — Kenyatta University</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes" class="section">
+      <div class="container">
+        <h2>Engineering Notes</h2>
+        <p>Technical writing and engineering journal entries will appear here. This section is set up to host articles about C++ architecture, deterministic simulation, backend engineering, and financial data engineering. Add Markdown files under <code>/docs/notes/</code> to publish new entries.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>For recruitment, collaboration, or a technical discussion, reach me via:</p>
+        <ul>
+          <li>Email: (add your preferred email to the site)</li>
+          <li>GitHub: <a href="https://github.com/brian-kipkoech-kirui" target="_blank">github.com/brian-kipkoech-kirui</a></li>
+          <li>LinkedIn: (add your LinkedIn URL)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 Brian Kipkoech Kirui — Built for Systems & Financial Engineering roles</small>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+</body>
+</html>
