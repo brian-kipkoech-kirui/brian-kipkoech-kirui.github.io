@@ -451,3 +451,50 @@ a:hover { text-decoration-thickness:2px; }
   .hero-visual { animation:heroFloat 8s ease-in-out infinite; }
   @keyframes heroFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-9px); } }
 }
+
+
+/* Plain-language multidisciplinary overview */
+.focus-section { padding-top:24px; }
+.focus-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.focus-card {
+  position:relative;
+  min-height:260px;
+  padding:26px;
+  overflow:hidden;
+  border:1px solid rgba(141,187,255,.2);
+  border-radius:18px;
+  background:linear-gradient(150deg,rgba(17,34,57,.9),rgba(8,17,31,.96));
+  box-shadow:0 18px 50px rgba(0,0,0,.22);
+}
+.focus-card::after {
+  content:"";
+  position:absolute;
+  width:150px;height:150px;
+  right:-80px;bottom:-90px;
+  border:1px solid rgba(100,240,210,.2);
+  border-radius:50%;
+  box-shadow:0 0 0 18px rgba(100,240,210,.025),0 0 0 38px rgba(141,187,255,.025);
+}
+.focus-number {
+  color:var(--accent);
+  font:700 .72rem/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;
+  letter-spacing:.16em;
+}
+.focus-card h3 { margin:22px 0 10px; font-size:1.35rem; letter-spacing:-.025em; }
+.focus-card p { margin:0 0 18px; color:#c2d0e1; }
+.focus-translation {
+  display:block;
+  max-width:40ch;
+  padding-top:14px;
+  border-top:1px solid rgba(141,187,255,.16);
+  color:#e4f2ff;
+  font-size:.9rem;
+}
+@media(max-width:920px) {
+  .focus-grid { grid-template-columns:1fr; }
+  .focus-card { min-height:unset; }
+}
