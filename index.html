@@ -105,10 +105,10 @@
             </div>
 
             <div class="assistant-suggested">
-              <button class="chip" data-question="What are your top projects?">Top projects</button>
-              <button class="chip" data-question="How would you fit into our team?">Team fit</button>
-              <button class="chip" data-question="Describe a recent engineering challenge you solved">Engineering challenge</button>
-              <button class="chip" data-question="How can I contact you?">Contact</button>
+              <button class="chip" data-question="What are your top projects?" data-target="#projects">Top projects</button>
+              <button class="chip" data-question="How would you fit into our team?" data-target="#experience">Team fit</button>
+              <button class="chip" data-question="Describe a recent engineering challenge you solved" data-target="#projects">Engineering challenge</button>
+              <button class="chip" data-question="How can I contact you?" data-target="#contact">Contact</button>
             </div>
 
             <form class="assistant-form" id="assistant-form">
@@ -139,7 +139,7 @@
       </div>
     </section>
 
-    <!-- Projects section moved up so the portfolio focuses on software engineering -->
+    <!-- Projects section -->
     <section id="projects" class="section">
       <div class="container">
         <div class="section-heading">
@@ -168,79 +168,7 @@
       </div>
     </section>
 
-    <!-- Quant lab kept but placed after projects so engineering work is primary -->
-    <section class="section quant-shell" id="quant-lab">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Quantitative Finance</p>
-          <h2>Financial Model Laboratory</h2>
-        </div>
-
-        <div class="quant-grid">
-          <div class="panel quant-panel">
-            <h3>Black-Scholes Pricing Demo</h3>
-            <form id="bs-form" class="calc-form">
-              <label>Spot price <input type="number" id="bs-spot" value="100" step="0.01" /></label>
-              <label>Strike <input type="number" id="bs-strike" value="100" step="0.01" /></label>
-              <label>Volatility <input type="number" id="bs-vol" value="0.2" step="0.01" /></label>
-              <label>Risk-free rate <input type="number" id="bs-rate" value="0.05" step="0.01" /></label>
-              <label>Time to expiry <input type="number" id="bs-time" value="1" step="0.01" /></label>
-              <button type="submit">Calculate</button>
-            </form>
-            <div class="result-box" id="bs-result">Call price: 10.45</div>
-            <p class="math-note">C = S N(d1) - K e^{-rT} N(d2)</p>
-          </div>
-
-          <div class="panel quant-panel">
-            <h3>Credit Risk Illustration</h3>
-            <form id="risk-form" class="calc-form">
-              <label>Exposure <input type="number" id="risk-exposure" value="1000000" step="1000" /></label>
-              <label>Probability of default <input type="number" id="risk-pd" value="0.03" step="0.001" /></label>
-              <label>Loss given default <input type="number" id="risk-lgd" value="0.6" step="0.01" /></label>
-              <button type="submit">Compute EL</button>
-            </form>
-            <div class="result-box" id="risk-result">Expected Loss: 18,000.00</div>
-            <p class="math-note">EL = Exposure × PD × LGD</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Explorer moved after projects and quant lab -->
-    <section id="explorer" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">System Architecture</p>
-          <h2>SYNTHIA Explorer</h2>
-        </div>
-
-        <div class="explorer-layout">
-          <div class="explorer-menu">
-            <button class="explorer-node active" data-node="ingestion">Ingestion Layer</button>
-            <button class="explorer-node" data-node="fabric">Financial Data Fabric</button>
-            <button class="explorer-node" data-node="worldstate">WorldState Core</button>
-            <button class="explorer-node" data-node="observatory">Observatory</button>
-            <button class="explorer-node" data-node="roadmap">Roadmap</button>
-          </div>
-
-          <div class="explorer-panel" id="explorer-panel">
-            <h3 id="explorer-title">Ingestion Layer</h3>
-            <p id="explorer-status">Status: Complete</p>
-            <p id="explorer-description">The ingestion layer normalizes market observations from providers and captures provenance, source freshness, and deterministic replay.</p>
-            <ul id="explorer-points">
-              <li>Provider-neutral adapters for financial observations</li>
-              <li>Normalized records and provenance</li>
-              <li>Deterministic replay of recorded sessions</li>
-            </ul>
-            <div class="explorer-links">
-              <a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank" rel="noreferrer">View source</a>
-              <a href="/projects/synthia.html">Technical details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- Move Skills, Experience, Contact directly after Projects -->
     <section id="skills" class="section">
       <div class="container">
         <div class="section-heading">
@@ -349,6 +277,80 @@
         </div>
       </div>
     </section>
+
+    <!-- Quant lab kept after skills/experience/contact so engineering is primary -->
+    <section class="section quant-shell" id="quant-lab">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Quantitative Finance</p>
+          <h2>Financial Model Laboratory</h2>
+        </div>
+
+        <div class="quant-grid">
+          <div class="panel quant-panel">
+            <h3>Black-Scholes Pricing Demo</h3>
+            <form id="bs-form" class="calc-form">
+              <label>Spot price <input type="number" id="bs-spot" value="100" step="0.01" /></label>
+              <label>Strike <input type="number" id="bs-strike" value="100" step="0.01" /></label>
+              <label>Volatility <input type="number" id="bs-vol" value="0.2" step="0.01" /></label>
+              <label>Risk-free rate <input type="number" id="bs-rate" value="0.05" step="0.01" /></label>
+              <label>Time to expiry <input type="number" id="bs-time" value="1" step="0.01" /></label>
+              <button type="submit">Calculate</button>
+            </form>
+            <div class="result-box" id="bs-result">Call price: 10.45</div>
+            <p class="math-note">C = S N(d1) - K e^{-rT} N(d2)</p>
+          </div>
+
+          <div class="panel quant-panel">
+            <h3>Credit Risk Illustration</h3>
+            <form id="risk-form" class="calc-form">
+              <label>Exposure <input type="number" id="risk-exposure" value="1000000" step="1000" /></label>
+              <label>Probability of default <input type="number" id="risk-pd" value="0.03" step="0.001" /></label>
+              <label>Loss given default <input type="number" id="risk-lgd" value="0.6" step="0.01" /></label>
+              <button type="submit">Compute EL</button>
+            </form>
+            <div class="result-box" id="risk-result">Expected Loss: 18,000.00</div>
+            <p class="math-note">EL = Exposure × PD × LGD</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explorer remains available but after quant content -->
+    <section id="explorer" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">System Architecture</p>
+          <h2>SYNTHIA Explorer</h2>
+        </div>
+
+        <div class="explorer-layout">
+          <div class="explorer-menu">
+            <button class="explorer-node active" data-node="ingestion">Ingestion Layer</button>
+            <button class="explorer-node" data-node="fabric">Financial Data Fabric</button>
+            <button class="explorer-node" data-node="worldstate">WorldState Core</button>
+            <button class="explorer-node" data-node="observatory">Observatory</button>
+            <button class="explorer-node" data-node="roadmap">Roadmap</button>
+          </div>
+
+          <div class="explorer-panel" id="explorer-panel">
+            <h3 id="explorer-title">Ingestion Layer</h3>
+            <p id="explorer-status">Status: Complete</p>
+            <p id="explorer-description">The ingestion layer normalizes market observations from providers and captures provenance, source freshness, and deterministic replay.</p>
+            <ul id="explorer-points">
+              <li>Provider-neutral adapters for financial observations</li>
+              <li>Normalized records and provenance</li>
+              <li>Deterministic replay of recorded sessions</li>
+            </ul>
+            <div class="explorer-links">
+              <a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank" rel="noreferrer">View source</a>
+              <a href="/projects/synthia.html">Technical details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div class="terminal-overlay hidden" id="terminal-overlay">
