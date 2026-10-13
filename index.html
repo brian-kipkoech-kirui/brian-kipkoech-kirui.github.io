@@ -124,6 +124,16 @@
     </section>
   </main>
 
+  <button class="assistant-launcher" id="assistant-launcher" type="button" aria-expanded="false" aria-controls="portfolio-assistant"><span class="assistant-launcher-dot" aria-hidden="true"></span> Ask Brian</button>
+  <section class="assistant-panel" id="portfolio-assistant" role="dialog" aria-modal="false" aria-labelledby="assistant-title" aria-hidden="true">
+    <div class="assistant-head"><div><p class="assistant-kicker">PORTFOLIO GUIDE</p><h2 id="assistant-title">A little more about Brian.</h2></div><button class="assistant-close" id="assistant-close" type="button" aria-label="Close assistant">×</button></div>
+    <p class="assistant-intro">Ask about my work, experience or areas of focus. I’ll point you to information from this portfolio.</p>
+    <div class="assistant-messages" id="assistant-messages" aria-live="polite"><div class="assistant-message assistant-answer">Hello. What would you like to know about Brian?</div></div>
+    <div class="assistant-prompts"><button type="button" data-question="What does Brian do?">What does Brian do?</button><button type="button" data-question="Tell me about SYNTHIA.">SYNTHIA</button><button type="button" data-question="What is his experience?">Experience</button></div>
+    <form class="assistant-form" id="assistant-form"><label class="sr-only" for="assistant-input">Ask a question about Brian</label><input id="assistant-input" name="question" type="text" maxlength="240" placeholder="Ask a question…" autocomplete="off" required><button type="submit" aria-label="Send question">↗</button></form>
+    <p class="assistant-disclaimer">Portfolio guide · Not a live AI service · <a href="mailto:kirui.kipkoech@proton.me">Contact Brian</a></p>
+  </section>
   <footer class="site-footer"><div class="container footer-inner"><a class="wordmark" href="#top">BKK<span>.</span></a><div><a href="https://github.com/brian-kipkoech-kirui" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.credly.com/users/kipkoech-brian#badge-portfolio" target="_blank" rel="noreferrer">Certifications ↗</a><a href="/docs/KIPKOECH_BRIAN_FlowCV_Resume_2026-10-02%20(2).pdf" target="_blank" rel="noreferrer">CV ↗</a></div><small>© 2026 Brian Kipkoech Kirui</small></div></footer>
+  <script src="/assets/portfolio-assistant.js" defer></script>
 </body>
 </html>
