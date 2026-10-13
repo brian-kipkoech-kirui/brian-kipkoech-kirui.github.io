@@ -1,0 +1,361 @@
+(function(){
+  const username = 'brian-kipkoech-kirui';
+
+  const explorerData = {
+    ingestion: {
+      title: 'Ingestion Layer',
+      status: 'Status: Complete',
+      description: 'The ingestion layer normalizes market observations from providers and captures provenance, source freshness, and deterministic replay.',
+      points: ['Provider-neutral adapters for financial observations','Normalized records and provenance','Deterministic replay of recorded sessions'],
+      links: ['https://github.com/brian-kipkoech-kirui/Synthia', '/projects/synthia.html']
+    },
+    fabric: {
+      title: 'Financial Data Fabric',
+      status: 'Status: In progress',
+      description: 'The data fabric validates, deduplicates, and structures raw market signal inputs into a clean and queryable knowledge layer.',
+      points: ['Validation and deduplication','Freshness labels and source tracing','Structured downstream consumption'],
+      links: ['https://github.com/brian-kipkoech-kirui/Synthia', '/projects/synthia.html']
+    },
+    worldstate: {
+      title: 'WorldState Core',
+      status: 'Status: Active',
+      description: 'The C++ core models entities, observations, and knowledge to create an explicit world-state that remains deterministic and explainable.',
+      points: ['Native C++ world model','Deterministic replay and simulation','Knowledge entity relationships'],
+      links: ['https://github.com/brian-kipkoech-kirui/Synthia', '/projects/synthia.html']
+    },
+    observatory: {
+      title: 'Observatory',
+      status: 'Status: Available',
+      description: 'The observatory exposes a browser-based view of native state through JSON and web controls for inspection and debugging.',
+      points: ['HTTP API access','Live inspection panel','Browser-based controls'],
+      links: ['https://github.com/brian-kipkoech-kirui/Synthia', '/projects/synthia.html']
+    },
+    roadmap: {
+      title: 'Roadmap',
+      status: 'Status: Planned',
+      description: 'Future work includes expanded analytics, portfolio logic, advanced risk modelling, and richer model-laboratory workflows.',
+      points: ['Valuation models','Portfolio and risk systems','Generated explanation layers'],
+      links: ['https://github.com/brian-kipkoech-kirui/Synthia', '/projects/synthia.html']
+    }
+  };
+
+  const knowledge = {
+    defaultResponse: 'I can help with projects, skills, experience, education, or contact details. Ask about SYNTHIA, C++, backend systems, or financial engineering.',
+    keywords: [
+      {
+        keys: ['project', 'projects', 'portfolio', 'work'],
+        response: 'My strongest project work includes SYNTHIA, the financial sentiment analysis dashboard, AI-driven prototypes, and mobile/system product experiments such as KIFARU-PAY and AI-Super-App.'
+      },
+      {
+        keys: ['synthia'],
+        response: 'SYNTHIA is a C++-first financial intelligence and deterministic world simulation platform focused on ingestion, provenance, and world-state modelling. It combines provider-neutral data ingestion with replayable, explainable financial analysis.'
+      },
+      {
+        keys: ['cpp', 'c++', 'systems', 'system'],
+        response: 'I am especially focused on C++ systems work, data structures and algorithms, concurrency, memory management, performance tuning, and building reliable system boundaries.'
+      },
+      {
+        keys: ['experience', 'work', 'career'],
+        response: 'I have experience in student systems support, digital infrastructure, platform optimization, and freelance full-stack development with React, Node.js, AWS, and AI integrations.'
+      },
+      {
+        keys: ['education', 'degree', 'masters', 'msc', 'university'],
+        response: 'I am pursuing MSc Financial Engineering at WorldQuant University and hold a BSc Computer Technology degree from Multimedia University.'
+      },
+      {
+        keys: ['contact', 'email', 'phone', 'location', 'reach'],
+        response: 'Email: kirui.kipkoech@proton.me | Phone: +254 718032380 | Location: Nairobi, Kenya | GitHub: github.com/brian-kipkoech-kirui'
+      },
+      {
+        keys: ['cv', 'resume'],
+        response: 'My CV is available through the Download CV button and the PDF in the docs folder of the repository.'
+      },
+      {
+        keys: ['ai', 'full stack', 'backend', 'software'],
+        response: 'My background spans backend systems, data products, AI prototypes, full-stack web applications, and engineering workflows for real operational use.'
+      }
+    ]
+  };
+
+  function addAssistantMessage(text, isUser = false) {
+    const body = document.getElementById('assistant-body');
+    if (!body) return;
+    const msg = document.createElement('div');
+    msg.className = `message ${isUser ? 'user' : 'bot'}`;
+    msg.textContent = text;
+    body.appendChild(msg);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function answerQuestion(question) {
+    const text = question.toLowerCase();
+    const match = knowledge.keywords.find(item => item.keys.some(key => text.includes(key)));
+    return match ? match.response : knowledge.defaultResponse;
+  }
+
+  function initAssistant() {
+    const form = document.getElementById('assistant-form');
+    const input = document.getElementById('assistant-input');
+    if (!form || !input) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const value = input.value.trim();
+      if (!value) return;
+      addAssistantMessage(value, true);
+      input.value = '';
+      setTimeout(() => addAssistantMessage(answerQuestion(value), false), 180);
+    });
+
+    document.querySelectorAll('.chip').forEach(button => {
+      button.addEventListener('click', function() {
+        const q = button.dataset.question;
+        input.value = q;
+        form.dispatchEvent(new Event('submit'));
+      });
+    });
+  }
+
+  function appendTerminalLine(text) {
+    const screen = document.getElementById('terminal-screen');
+    if (!screen) return;
+    const line = document.createElement('div');
+    line.className = 'terminal-line';
+    line.textContent = text;
+    screen.appendChild(line);
+  }
+
+  function handleTerminalCommand(raw) {
+    const command = raw.trim().toLowerCase();
+    const screen = document.getElementById('terminal-screen');
+    const outputBox = document.getElementById('terminal-output');
+    const terminalOverlay = document.getElementById('terminal-overlay');
+
+    if (!command) return;
+
+    const commands = {
+      help: 'Available commands: help, projects, skills, experience, education, synthia, contact, cv',
+      projects: 'Opening project section and repository portfolio...',
+      skills: 'Opening technical skills section...',
+      experience: 'Opening experience and education section...',
+      education: 'Opening education section...',
+      synthia: 'Opening SYNTHIA architecture explorer...',
+      contact: 'Opening contact and recruiter access section...',
+      cv: 'Opening CV download link...' 
+    };
+
+    if (screen) {
+      const line = document.createElement('div');
+      line.className = 'terminal-line';
+      line.textContent = `brian@portfolio:~$ ${raw}`;
+      screen.appendChild(line);
+      const result = document.createElement('div');
+      result.className = 'terminal-line';
+      result.textContent = commands[command] || `Command not found: ${raw}. Try: help, projects, skills, synthia, contact`;
+      screen.appendChild(result);
+      screen.scrollTop = screen.scrollHeight;
+    }
+
+    if (outputBox) {
+      const line = document.createElement('div');
+      line.textContent = `> ${raw}`;
+      outputBox.appendChild(line);
+      const result = document.createElement('div');
+      result.textContent = commands[command] || `Command not found: ${raw}. Try: help, projects, skills, synthia, contact`;
+      outputBox.appendChild(result);
+      outputBox.scrollTop = outputBox.scrollHeight;
+    }
+
+    const map = {
+      projects: '#projects',
+      skills: '#skills',
+      experience: '#experience',
+      education: '#experience',
+      synthia: '#explorer',
+      contact: '#contact',
+      cv: '/docs/KIPKOECH_BRIAN_FlowCV_Resume_2026-10-02%20(2).pdf'
+    };
+
+    if (map[command]) {
+      if (command === 'cv') {
+        window.open(map[command], '_blank', 'noreferrer');
+      } else {
+        const target = document.querySelector(map[command]);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    if (terminalOverlay) {
+      terminalOverlay.classList.add('hidden');
+    }
+  }
+
+  function initTerminal() {
+    const form = document.getElementById('terminal-form');
+    const input = document.getElementById('terminal-input');
+    const popupForm = document.getElementById('terminal-popup-form');
+    const popupInput = document.getElementById('terminal-popup-input');
+    const overlay = document.getElementById('terminal-overlay');
+    const toggle = document.getElementById('terminal-toggle');
+
+    function openTerminal() {
+      if (overlay) overlay.classList.remove('hidden');
+      setTimeout(() => (popupInput || input)?.focus(), 50);
+    }
+
+    if (toggle) toggle.addEventListener('click', openTerminal);
+    if (overlay) {
+      overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) overlay.classList.add('hidden');
+      });
+    }
+
+    if (form && input) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleTerminalCommand(input.value);
+        input.value = '';
+      });
+    }
+
+    if (popupForm && popupInput) {
+      popupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleTerminalCommand(popupInput.value);
+        popupInput.value = '';
+      });
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        openTerminal();
+      }
+      if (e.key === 'Escape' && overlay) {
+        overlay.classList.add('hidden');
+      }
+    });
+  }
+
+  function initExplorer() {
+    const buttons = document.querySelectorAll('.explorer-node');
+    const titleEl = document.getElementById('explorer-title');
+    const statusEl = document.getElementById('explorer-status');
+    const descEl = document.getElementById('explorer-description');
+    const pointsEl = document.getElementById('explorer-points');
+    const linksEl = document.querySelector('.explorer-links');
+
+    if (!buttons.length || !titleEl || !statusEl || !descEl || !pointsEl || !linksEl) return;
+
+    function render(nodeKey) {
+      const data = explorerData[nodeKey];
+      if (!data) return;
+      titleEl.textContent = data.title;
+      statusEl.textContent = data.status;
+      descEl.textContent = data.description;
+      pointsEl.innerHTML = data.points.map(item => `<li>${item}</li>`).join('');
+      linksEl.innerHTML = `
+        <a href="${data.links[0]}" target="_blank" rel="noreferrer">View source</a>
+        <a href="${data.links[1]}">Technical details</a>
+      `;
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.node === nodeKey));
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => render(btn.dataset.node));
+    });
+  }
+
+  function computeBlackScholes(spot, strike, vol, rate, time) {
+    const sigma = vol;
+    const s = spot;
+    const k = strike;
+    const r = rate;
+    const t = time;
+    const sqrtT = Math.sqrt(t);
+    const d1 = (Math.log(s / k) + (r + 0.5 * sigma * sigma) * t) / (sigma * sqrtT);
+    const d2 = d1 - sigma * sqrtT;
+    const nd1 = normalCDF(d1);
+    const nd2 = normalCDF(d2);
+    const call = s * nd1 - k * Math.exp(-r * t) * nd2;
+    const put = k * Math.exp(-r * t) * (1 - nd2) - s * (1 - nd1);
+    return { call, put };
+  }
+
+  function normalCDF(x) {
+    const z = x / Math.sqrt(2);
+    return 0.5 * (1 + erf(z));
+  }
+
+  function erf(x) {
+    const sign = x >= 0 ? 1 : -1;
+    x = Math.abs(x);
+    const a1 = 0.254829592;
+    const a2 = -0.284496736;
+    const a3 = 1.421413741;
+    const a4 = -1.453152027;
+    const a5 = 1.061405429;
+    const p = 0.3275911;
+    const t = 1 / (1 + p * x);
+    const y = 1 - (((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t * Math.exp(-x * x));
+    return sign * y;
+  }
+
+  function initQuantLab() {
+    const bsForm = document.getElementById('bs-form');
+    const bsResult = document.getElementById('bs-result');
+    const riskForm = document.getElementById('risk-form');
+    const riskResult = document.getElementById('risk-result');
+
+    if (bsForm && bsResult) {
+      bsForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const spot = Number(document.getElementById('bs-spot').value || 100);
+        const strike = Number(document.getElementById('bs-strike').value || 100);
+        const vol = Number(document.getElementById('bs-vol').value || 0.2);
+        const rate = Number(document.getElementById('bs-rate').value || 0.05);
+        const time = Number(document.getElementById('bs-time').value || 1);
+        const price = computeBlackScholes(spot, strike, vol, rate, time);
+        bsResult.textContent = `Call price: ${price.call.toFixed(2)} | Put price: ${price.put.toFixed(2)}`;
+      });
+    }
+
+    if (riskForm && riskResult) {
+      riskForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const exposure = Number(document.getElementById('risk-exposure').value || 1000000);
+        const pd = Number(document.getElementById('risk-pd').value || 0.03);
+        const lgd = Number(document.getElementById('risk-lgd').value || 0.6);
+        const expectedLoss = exposure * pd * lgd;
+        riskResult.textContent = `Expected Loss: ${expectedLoss.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`;
+      });
+    }
+  }
+
+  async function renderRepos() {
+    const container = document.getElementById('repos-list');
+    if (!container) return;
+
+    try {
+      const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`);
+      if (!res.ok) throw new Error('GitHub API error');
+      const repos = await res.json();
+      const ranked = repos.filter(r => !r.fork).sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+      container.innerHTML = ranked.map(repo => `
+        <article class="repo-card">
+          <h4><a href="${repo.html_url}" target="_blank" rel="noreferrer">${repo.name}</a></h4>
+          <div class="repo-meta">${repo.language || 'Project'}${repo.stargazers_count ? ' • ★ ' + repo.stargazers_count : ''}</div>
+          <p>${repo.description || 'Technical project and repository.'}</p>
+        </article>
+      `).join('');
+    } catch (error) {
+      container.innerHTML = '<article class="repo-card"><p>GitHub repositories could not be loaded at this moment.</p></article>';
+    }
+  }
+
+  initAssistant();
+  initTerminal();
+  initExplorer();
+  initQuantLab();
+  renderRepos();
+})();
