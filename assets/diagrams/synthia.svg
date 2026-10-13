@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#071018"/>
+  <g transform="translate(40,40)" fill="#cceefb" font-family="sans-serif" font-size="14">
+    <rect x="0" y="0" width="220" height="80" rx="8" fill="#0b1220" stroke="#184d60"/>
+    <text x="110" y="24" fill="#77c0ff" text-anchor="middle" font-weight="700">External Sources</text>
+    <text x="110" y="48" fill="#9fcfe2" text-anchor="middle">(Yahoo, Finnhub, CSV)</text>
+
+    <rect x="300" y="0" width="220" height="80" rx="8" fill="#0b1220" stroke="#184d60"/>
+    <text x="410" y="28" fill="#77c0ff" text-anchor="middle" font-weight="700">Ingestion Adapters</text>
+    <text x="410" y="48" fill="#9fcfe2" text-anchor="middle">provider-neutral FinancialDataSource</text>
+
+    <rect x="600" y="0" width="320" height="80" rx="8" fill="#0b1220" stroke="#184d60"/>
+    <text x="760" y="28" fill="#77c0ff" text-anchor="middle" font-weight="700">FinancialDataFabric</text>
+    <text x="760" y="48" fill="#9fcfe2" text-anchor="middle">validation • dedup • provenance</text>
+
+    <g transform="translate(150,120)">
+      <rect x="0" y="0" width="420" height="120" rx="8" fill="#071826" stroke="#153544"/>
+      <text x="210" y="22" fill="#77c0ff" text-anchor="middle" font-weight="700">WorldState (C++ Core)</text>
+      <text x="210" y="46" fill="#9fcfe2" text-anchor="middle">Entities • Observations • Knowledge</text>
+      <text x="210" y="70" fill="#9fcfe2" text-anchor="middle">Deterministic simulation & replay</text>
+    </g>
+
+    <g transform="translate(150,260)">
+      <rect x="0" y="0" width="420" height="100" rx="8" fill="#071018" stroke="#17394a"/>
+      <text x="210" y="28" fill="#77c0ff" text-anchor="middle" font-weight="700">Web Observatory / Dashboard</text>
+      <text x="210" y="52" fill="#9fcfe2" text-anchor="middle">HTTP JSON API • Visualizers • Controls</text>
+    </g>
+
+    <!-- arrows -->
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#77c0ff"/>
+      </marker>
+    </defs>
+
+    <line x1="220" y1="40" x2="300" y2="40" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="520" y1="40" x2="600" y2="40" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="760" y1="80" x2="760" y2="120" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="760" y1="200" x2="760" y2="240" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <line x1="320" y1="200" x2="320" y2="240" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <text x="20" y="440" fill="#6faec4" font-size="12">SYNTHIA — deterministic ingestion, replay, WorldState, and terminal</text>
+  </g>
+</svg>

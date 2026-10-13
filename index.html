@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Brian Kipkoech Kirui — Systems Engineer & Software Developer</title>
-  <meta name="description" content="Brian Kipkoech Kirui — Systems Engineer | C++ | Systems Development | Financial Engineering | Data Engineering" />
+  <title>Brian Kipkoech Kirui — Systems & Full‑Stack AI Engineer</title>
+  <meta name="description" content="Brian Kipkoech Kirui — Systems Engineer | C++ | Full‑Stack & AI | Financial Engineering | Data Engineering" />
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -26,9 +26,9 @@
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1>Building Systems. Engineering Solutions. Turning Complex Problems into Software.</h1>
-          <p class="subtitle">Software engineer focused on systems engineering, C++, backend architecture, data-intensive applications, and quantitative financial modelling.</p>
+          <p class="subtitle">Systems & full‑stack developer — C++, backend architecture, data‑intensive applications, and applied AI for production systems.</p>
 
-          <p class="intro">I build reliable, maintainable systems: C++ engines, backend services, data fabrics, and simulation environments used to reason about complex domains — including financial markets and high-integrity infrastructure. I focus on architecture, performance, and reproducible data pipelines.</p>
+          <p class="intro">I build reliable, maintainable systems: C++ engines, backend services, data fabrics, and full‑stack AI applications. I focus on architecture, performance, reproducibility, and measurable outcomes — from deterministic simulation to deployed ML‑backed features.</p>
 
           <p class="cta">
             <a class="btn primary" href="#projects">View Projects</a>
@@ -38,7 +38,7 @@
           </p>
 
           <div style="margin-top:16px;color:var(--muted);font-size:14px">
-            <strong>Location:</strong> Nairobi, Kenya • <strong>Open to:</strong> Systems Development, Backend Engineering, C++ Systems, Data & Quant Engineering
+            <strong>Location:</strong> Nairobi, Kenya • <strong>Open to:</strong> Systems Development, Backend Engineering, C++ Systems, Full‑Stack & AI roles
           </div>
         </div>
 
@@ -67,39 +67,39 @@
             <h3>Systems Development</h3>
             <ul>
               <li>C++</li>
-              <li>Object-Oriented Design</li>
+              <li>Object-Oriented & Modern C++ Design</li>
               <li>Data Structures & Algorithms</li>
-              <li>Memory Management</li>
+              <li>Memory Management & Low‑level Debugging</li>
               <li>Multithreading & Concurrency</li>
-              <li>Performance Optimization</li>
+              <li>Performance Optimization & Profiling</li>
             </ul>
           </div>
           <div>
             <h3>Backend & Infrastructure</h3>
             <ul>
-              <li>REST APIs</li>
+              <li>REST APIs & Microservices</li>
               <li>Database Design & SQL (MongoDB, PostgreSQL)</li>
-              <li>Linux</li>
-              <li>Git & CMake</li>
-              <li>Build Systems, Testing & CI/CD</li>
+              <li>Linux & Ops Practices</li>
+              <li>Git, CMake, Docker</li>
+              <li>CI/CD & Automated Testing</li>
             </ul>
           </div>
           <div>
             <h3>Data Science & AI</h3>
             <ul>
-              <li>Python (Pandas, scikit-learn)</li>
-              <li>Machine Learning & Statistical Modelling</li>
-              <li>Data Engineering & ETL</li>
-              <li>Predictive Modelling</li>
+              <li>Python (Pandas, scikit‑learn)</li>
+              <li>Machine Learning & NLP</li>
+              <li>Model Validation & Productionization</li>
+              <li>ETL & Data Engineering</li>
             </ul>
           </div>
           <div>
             <h3>Financial Engineering</h3>
             <ul>
-              <li>Derivatives Pricing & Stochastic Processes</li>
+              <li>Derivatives Pricing & Stochastic Models</li>
               <li>Monte Carlo Simulation</li>
               <li>Risk Modelling & Time Series Analysis</li>
-              <li>Quantitative Finance Methods</li>
+              <li>Quantitative Methods</li>
             </ul>
           </div>
         </div>
@@ -114,59 +114,29 @@
           <div class="project-meta">
             <h3>SYNTHIA — Deterministic World Simulation & Financial Intelligence Engine</h3>
             <p class="muted">C++ • Deterministic Ingestion • Financial WorldState • Data Fabric</p>
+            <p><a href="/projects/synthia.html">Read technical details →</a></p>
           </div>
           <div class="project-body">
-            <p>SYNTHIA is a C++-first platform for ingesting financial observations, preserving provenance, and projecting normalized records into an explicit WorldState. It emphasizes deterministic ingestion and replay, making it suitable for reproducible analysis, simulation, and model laboratories.</p>
-
-            <h4>Technical architecture</h4>
-            <ul>
-              <li>Native C++ engine (World / Physics / Agents / Knowledge)</li>
-              <li>FinancialDataSource adapters (Yahoo, Finnhub) with freshness semantics</li>
-              <li>Deterministic ingestion sessions & replay</li>
-              <li>Lightweight web observatory exposing native JSON & HTTP APIs</li>
-            </ul>
-
-            <h4>How to run</h4>
-            <pre><code>cmake -S . -B build
-cmake --build build -j2
-./build/synthia_dashboard
-# or record a finance ingestion session
-./build/synthia_finance --provider yahoo --symbol AAPL --period 1d --record ingestion_session.json</code></pre>
-
+            <p>SYNTHIA is a C++‑first platform for ingesting financial observations with provenance, projecting normalized records into a WorldState, and supporting deterministic replay — valuable for reproducible analysis and simulation.</p>
             <p class="links"><a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank">Repository →</a></p>
+            <p><img src="/assets/diagrams/synthia.svg" alt="SYNTHIA architecture diagram" style="max-width:100%;border-radius:8px;margin-top:12px;border:1px solid rgba(255,255,255,0.03)"></p>
           </div>
         </article>
 
-        <div id="repos-list" class="projects-grid">
+        <article class="project-card featured">
+          <div class="project-meta">
+            <h3>Full‑Stack AI & Inference Pipelines</h3>
+            <p class="muted">React • Node • Python • OpenAI • ML Ops</p>
+            <p><a href="/projects/fullstack-ai.html">Read technical details →</a></p>
+          </div>
+          <div class="project-body">
+            <p>Examples and templates for deploying production-ready AI features: inference services, model serving, feature stores, observability, and user‑facing applications with proper fallbacks and rate controls.</p>
+            <p><img src="/assets/diagrams/fullstack-ai.svg" alt="Fullstack AI architecture" style="max-width:100%;border-radius:8px;margin-top:12px;border:1px solid rgba(255,255,255,0.03)"></p>
+          </div>
+        </article>
+
+        <div id="repos-list" class="projects-grid" aria-live="polite">
           <!-- populated by JS with all public repositories -->
-        </div>
-
-        <h3 style="margin-top:18px;color:var(--muted)">Selected project highlights (additional context)</h3>
-        <div class="projects-grid" style="margin-top:10px">
-          <article class="repo-card">
-            <h4><a href="https://github.com/brian-kipkoech-kirui/Sentimental-Analysis" target="_blank">Financial Sentiment Analysis Dashboard</a></h4>
-            <div class="repo-meta">Python • NLP • Dashboard</div>
-            <p class="muted">A project focused on extracting sentiment from finance-related text and presenting near-real-time analysis via a web dashboard. See repository for scripts, notebooks, and deployment notes.</p>
-          </article>
-
-          <article class="repo-card">
-            <h4><a href="https://github.com/brian-kipkoech-kirui/Ai-Assisted-Chatbot" target="_blank">AI Study Companion / Chatbot Prototype</a></h4>
-            <div class="repo-meta">Node / JS • OpenAI integration</div>
-            <p class="muted">Prototype voice/text assistant integrating OpenAI APIs for guided study help and content generation. Useful as a demonstrator of integrating generative models into interactive tools.</p>
-          </article>
-
-          <article class="repo-card">
-            <h4><a href="https://github.com/brian-kipkoech-kirui/AI-Super-App-" target="_blank">AI Super App (Android / Prototype)</a></h4>
-            <div class="repo-meta">Kotlin • Android</div>
-            <p class="muted">An experimental Android application exploring AI-driven user workflows and features. See repository for mobile sources and notes.</p>
-          </article>
-
-          <article class="repo-card">
-            <h4><a href="https://github.com/brian-kipkoech-kirui/KIFARU-PAY" target="_blank">KIFARU-PAY — Decentralized Payment (Prototype)</a></h4>
-            <div class="repo-meta">Kotlin • Payments</div>
-            <p class="muted">A payment systems prototype focusing on decentralized payment flows for mobile platforms. Repository includes mobile client code and integration notes.</p>
-          </article>
-
         </div>
 
       </div>
@@ -178,23 +148,22 @@ cmake --build build -j2
         <div class="two-col">
           <div>
             <h3>Professional Summary</h3>
-            <p>Versatile Full-Stack developer with a strong academic foundation in Computer Science and Data Science. Experienced in building scalable web applications and implementing AI-powered tools for real-world use. I lead technical development, streamline workflows with automation and generative AI, and deliver maintainable, well-tested systems. I focus on clean code, performance, and measurable impact.</p>
+            <p>Versatile engineer with graduate-level training in financial engineering and hands-on experience building systems, data platforms, and AI-enabled applications. I deliver pragmatic, production‑oriented solutions with attention to engineering rigor and measurable outcomes.</p>
 
             <h3 style="margin-top:12px">Experience</h3>
             <h4>Student Support & System Administrator — Kenyatta University</h4>
             <p class="muted">Sep 2021 – Present</p>
             <ul>
-              <li>Maintain and upgrade learning support platforms integrating generative AI to improve engagement and outcomes.</li>
-              <li>Streamlined student information systems and automated reporting using Python and web dashboards.</li>
-              <li>Supported institutional digital transformation projects with a focus on data-driven insights and platform reliability.</li>
+              <li>Maintain and upgrade learning platforms integrating generative AI to improve engagement and outcomes.</li>
+              <li>Automated reporting and data pipelines using Python and dashboards for operational teams.</li>
+              <li>Platform troubleshooting and configuration for institutional systems (including student and finance modules).</li>
             </ul>
 
             <h4 style="margin-top:10px">Full-Stack Developer (Freelance) — Crossover (Remote)</h4>
             <p class="muted">2022 – Present</p>
             <ul>
-              <li>Built and deployed React + Node.js web applications including dashboards, e-learning tools, and finance-related prototypes.</li>
-              <li>Integrated OpenAI and other AI services for content generation, automated support, and intelligent suggestions.</li>
-              <li>Implemented MongoDB backends with scalable REST APIs and serverless deployments on AWS.</li>
+              <li>Built React + Node.js applications with scalable APIs and serverless deployment patterns on AWS.</li>
+              <li>Integrated OpenAI and other AI services to add automation and intelligent features.</li>
             </ul>
           </div>
 
@@ -208,11 +177,10 @@ cmake --build build -j2
 
             <h3 style="margin-top:12px">Certifications & Badges</h3>
             <ul>
-              <li>Meta Database Engineering Certificate</li>
-              <li>IBM Cybersecurity Analyst Certificate</li>
+              <li>Meta Database Engineering</li>
+              <li>IBM Cybersecurity Analyst</li>
               <li>WorldQuant Data Science Lab</li>
-              <li>AWS Cloud courses & preparatory learning</li>
-              <li>JavaScript Algorithms & Data Structures</li>
+              <li>AWS coursework & preparatory certificates</li>
             </ul>
           </div>
         </div>
@@ -222,7 +190,7 @@ cmake --build build -j2
     <section id="notes" class="section">
       <div class="container">
         <h2>Engineering Notes</h2>
-        <p>This section hosts technical writing and engineering journal entries about C++ architecture, deterministic simulation, backend engineering, and financial data engineering. Add Markdown files under <code>/docs/notes/</code> to publish new entries.</p>
+        <p>This section hosts technical writing about C++ architecture, deterministic simulation, system design, and productionizing ML. Add Markdown files under <code>/docs/notes/</code> to publish entries.</p>
       </div>
     </section>
 
@@ -231,22 +199,22 @@ cmake --build build -j2
         <h2>Contact</h2>
         <p>For recruitment, collaboration, or a technical discussion:</p>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:kirui.kipkoech@protom.me">kirui.kipkoech@protom.me</a></li>
+          <li><strong>Email:</strong> <a href="mailto:kirui.kipkoech@proton.me">kirui.kipkoech@proton.me</a></li>
           <li><strong>Phone:</strong> +254 718032380</li>
-          <li><strong>Credly:</strong> <a href="https://www.credly.com/users/kipkoech-brian#badge-portfolio" target="_blank">https://www.credly.com/users/kipkoech-brian#badge-portfolio</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kipkoech-brian-9a4838204/" target="_blank">linkedin.com/in/kipkoech-brian-9a4838204/</a></li>
+          <li><strong>Credly:</strong> <a href="https://www.credly.com/users/kipkoech-brian#badge-portfolio" target="_blank">credly.com/users/kipkoech-brian</a></li>
           <li><strong>GitHub:</strong> <a href="https://github.com/brian-kipkoech-kirui" target="_blank">github.com/brian-kipkoech-kirui</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kipkoech-brian-9a4838204/" target="_blank">linkedin.com/in/kipkoech-brian-9a4838204/</a></li>
           <li><strong>Location:</strong> Nairobi, Kenya</li>
         </ul>
 
-        <p style="color:var(--muted)">CV and recruiter-friendly summary available for download. References available on request.</p>
+        <p style="color:var(--muted)">Upload a PDF to <code>/docs/CV.pdf</code> to enable the Download CV button. Screenshots for projects can be added under <code>/assets/projects/</code> and will appear on the relevant project pages.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <small>© 2026 Brian Kipkoech Kirui — Systems & Financial Engineering</small>
+      <small>© 2026 Brian Kipkoech Kirui — Systems & Full‑Stack AI Engineering</small>
     </div>
   </footer>
 

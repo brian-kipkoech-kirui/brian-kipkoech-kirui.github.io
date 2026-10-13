@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#071018"/>
+  <g transform="translate(40,40)" fill="#cceefb" font-family="sans-serif" font-size="14">
+    <rect x="0" y="0" width="240" height="80" rx="8" fill="#0b1220" stroke="#184d60"/>
+    <text x="120" y="28" fill="#77c0ff" text-anchor="middle" font-weight="700">Client / Web App</text>
+    <text x="120" y="48" fill="#9fcfe2" text-anchor="middle">React • Next • Mobile</text>
+
+    <rect x="320" y="0" width="260" height="80" rx="8" fill="#0b1220" stroke="#184d60"/>
+    <text x="450" y="28" fill="#77c0ff" text-anchor="middle" font-weight="700">API / Gateway</text>
+    <text x="450" y="48" fill="#9fcfe2" text-anchor="middle">Node • Express • Auth</text>
+
+    <rect x="660" y="0" width="420" height="80" rx="8" fill="#0b1220" stroke="#184d60"/>
+    <text x="870" y="28" fill="#77c0ff" text-anchor="middle" font-weight="700">Inference / Model Serving</text>
+    <text x="870" y="48" fill="#9fcfe2" text-anchor="middle">Python • FastAPI • Torch • OpenAI</text>
+
+    <g transform="translate(140,140)">
+      <rect x="0" y="0" width="900" height="120" rx="8" fill="#071826" stroke="#153544"/>
+      <text x="450" y="28" fill="#77c0ff" text-anchor="middle" font-weight="700">Data Platform & Feature Store</text>
+      <text x="450" y="52" fill="#9fcfe2" text-anchor="middle">ETL • Feature pipelines • Redis / Postgres / S3</text>
+      <text x="450" y="76" fill="#9fcfe2" text-anchor="middle">Monitoring • Observability • Model metrics</text>
+    </g>
+
+    <g transform="translate(140,300)">
+      <rect x="0" y="0" width="420" height="80" rx="8" fill="#071018" stroke="#17394a"/>
+      <text x="210" y="28" fill="#77c0ff" text-anchor="middle" font-weight="700">CI / CD & Infra</text>
+      <text x="210" y="52" fill="#9fcfe2" text-anchor="middle">Docker • GitHub Actions • AWS</text>
+    </g>
+
+    <defs>
+      <marker id="arrow2" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+        <path d="M0,0 L10,5 L0,10 z" fill="#77c0ff"/>
+      </marker>
+    </defs>
+
+    <line x1="240" y1="40" x2="320" y2="40" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow2)"/>
+    <line x1="580" y1="40" x2="660" y2="40" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow2)"/>
+    <line x1="500" y1="200" x2="500" y2="260" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow2)"/>
+    <line x1="820" y1="80" x2="820" y2="300" stroke="#77c0ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+    <text x="20" y="480" fill="#6faec4" font-size="12">Full‑Stack AI architecture: client → API → inference → data platform → infra</text>
+  </g>
+</svg>

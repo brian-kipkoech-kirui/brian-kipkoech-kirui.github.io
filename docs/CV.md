@@ -6,7 +6,7 @@ Versatile Full-Stack developer with a strong academic foundation in Computer Sci
 ---
 
 ## Contact
-- Email: kirui.kipkoech@protom.me
+- Email: kirui.kipkoech@proton.me
 - Phone: +254 718032380
 - Location: Nairobi, Kenya
 - GitHub: https://github.com/brian-kipkoech-kirui
@@ -48,8 +48,6 @@ Versatile Full-Stack developer with a strong academic foundation in Computer Sci
 ---
 
 ## Selected Projects & Repositories
-(Links point to public GitHub repositories under my profile)
-
 - SYNTHIA — Deterministic World Simulation & Financial Intelligence Engine (C++)
   https://github.com/brian-kipkoech-kirui/Synthia
 
@@ -82,7 +80,3 @@ See Credly portfolio: https://www.credly.com/users/kipkoech-brian#badge-portfoli
 
 ## References
 Available upon request.
-
----
-
-*Document generated and published from the GitHub Pages repository.*

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SYNTHIA — Technical Details</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="container"><a class="brand" href="/">Brian Kipkoech Kirui</a></div></header>
+  <main class="section"><div class="container">
+    <h1>SYNTHIA — Deterministic World Simulation & Financial Intelligence</h1>
+    <p class="muted">C++ • Data Fabric • Deterministic ingestion • Replayable sessions</p>
+
+    <h2>Overview</h2>
+    <p>SYNTHIA was designed as a headless-first data fabric and world-state engine. The core is a native C++ runtime that models entities, events, and knowledge with an explicit deterministic seed and replay model. The platform emphasizes provenance and reproducibility — ingestion adapters normalize provider observations and label them with freshness semantics.</p>
+
+    <h2>Architecture Schematic</h2>
+    <img src="/assets/diagrams/synthia.svg" alt="SYNTHIA architecture" style="max-width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.03)">
+
+    <h2>Key Components</h2>
+    <ul>
+      <li><strong>Ingestion adapters:</strong> provider-neutral FinancialDataSource implementations (Yahoo, Finnhub) that produce normalized records.</li>
+      <li><strong>FinancialDataFabric:</strong> validation, deduplication, timestamp/provenance handling, tagging of freshness.</li>
+      <li><strong>WorldState (C++):</strong> deterministic state machine representing entities, observations, and knowledge graphs used for analysis and simulation.</li>
+      <li><strong>Web Observatory:</strong> lightweight HTML/CSS/JS visualization that queries the core via HTTP/JSON endpoints for inspection and control.</li>
+    </ul>
+
+    <h2>Run & Development</h2>
+    <pre><code>cmake -S . -B build
+cmake --build build -j2
+./build/synthia_dashboard
+# Record a polling ingestion session
+./build/synthia_finance --provider yahoo --symbol AAPL --period 1d --record ingestion_session.json
+# Replay an ingestion session
+./build/synthia_finance --mode replay --replay ingestion_session.json
+</code></pre>
+
+    <h2>Engineering challenges & solutions</h2>
+    <ul>
+      <li><strong>Determinism:</strong> Use of explicit seeds and ordered ingestion sessions to ensure replayable behavior for analysis and testing.</li>
+      <li><strong>Provenance:</strong> Normalized records include source timestamps and provider metadata for traceability.</li>
+      <li><strong>Performance:</strong> Native C++ data structures with careful memory management and batching on ingestion paths.</li>
+    </ul>
+
+    <p class="muted">Repository: <a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank">github.com/brian-kipkoech-kirui/Synthia</a></p>
+    <p><a class="btn" href="/">← Back</a></p>
+  </div></main>
+  <footer class="site-footer"><div class="container"><small>© 2026 Brian Kipkoech Kirui</small></div></footer>
+</body>
+</html>

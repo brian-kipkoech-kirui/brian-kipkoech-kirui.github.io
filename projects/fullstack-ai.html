@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Full‑Stack AI — Technical Details</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="container"><a class="brand" href="/">Brian Kipkoech Kirui</a></div></header>
+  <main class="section"><div class="container">
+    <h1>Full‑Stack AI & Production Inference Pipelines</h1>
+    <p class="muted">React • Node • Python • FastAPI • OpenAI • ML Ops</p>
+
+    <h2>Overview</h2>
+    <p>This page documents a production-minded full‑stack AI architecture: client apps communicate with authenticated APIs that orchestrate inference requests, feature retrieval, and asynchronous job processing. The design emphasizes reliability, monitoring, rate limits, and clear fallbacks when third‑party models are unavailable.</p>
+
+    <h2>Architecture Schematic</h2>
+    <img src="/assets/diagrams/fullstack-ai.svg" alt="Fullstack AI architecture" style="max-width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.03)">
+
+    <h2>Key patterns</h2>
+    <ul>
+      <li><strong>Frontend:</strong> React/Next.js client with server-side hydration for SEO and progressive enhancement.</li>
+      <li><strong>API Gateway:</strong> Node/Express or FastAPI with authentication, request validation, and orchestration to downstream services.</li>
+      <li><strong>Inference layer:</strong> FastAPI microservices or serverless functions for model serving (Torch / OpenAI) with caching and batching.</li>
+      <li><strong>Data platform:</strong> Feature store (Postgres/Redis), object store (S3), and ETL pipelines for reproducible features.</li>
+      <li><strong>Ops:</strong> Docker-based deployment, GitHub Actions, observability (Prometheus / Grafana / logs), and automated testing.
+      </li>
+    </ul>
+
+    <h2>Implementation notes</h2>
+    <ul>
+      <li>Prefer small, well-tested inference endpoints; perform server-side validation and use retries with exponential backoff for third‑party calls.</li>
+      <li>Expose model metrics and data drift alerts; include canary releases when updating model code.</li>
+      <li>Keep client-side sensitive logic minimal; perform authorization and rate limiting at the gateway layer.</li>
+    </ul>
+
+    <p class="muted">This documentation is a template for production-ready AI features — adapt the stack and components to your security and latency requirements.</p>
+    <p><a class="btn" href="/">← Back</a></p>
+  </div></main>
+  <footer class="site-footer"><div class="container"><small>© 2026 Brian Kipkoech Kirui</small></div></footer>
+</body>
+</html>
