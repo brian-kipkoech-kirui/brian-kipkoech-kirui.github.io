@@ -1,5 +1,11 @@
 (function(){
   const username = 'brian-kipkoech-kirui';
+  const cvCandidates = [
+    '/docs/CV.pdf',
+    '/docs/KIPKOECH_BRIAN_FlowCV_Resume_2026-10-02%20(2).pdf',
+    '/docs/KIPKOECH_BRIAN_FlowCV_Resume_2026-10-02%20(2).pdf'
+  ];
+
   async function fetchRepos(){
     try{
       const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`);
@@ -14,33 +20,42 @@
 
   function renderRepos(repos){
     const container = document.getElementById('repos-list');
+    if(!container) return;
     container.innerHTML = '';
-    // Filter out the pages repo since this site is hosted there
     repos.sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at));
     repos.forEach(r=>{
       const el = document.createElement('article');
       el.className = 'repo-card';
       el.innerHTML = `
         <h4><a href="${r.html_url}" target="_blank" rel="noreferrer">${r.name}</a></h4>
-        <div class="repo-meta">${r.language || ''} ${r.stargazers_count? '• ★'+r.stargazers_count : ''}</div>
+        <div class="repo-meta">${r.language || ''} ${r.stargazers_count ? '• ★'+r.stargazers_count : ''}</div>
         <p class="muted">${r.description || ''}</p>
       `;
       container.appendChild(el);
     });
   }
 
-  // wire download cv: if docs/CV.pdf missing, point to docs/CV.md
-  async function checkCV(){
-    try{
-      const res = await fetch('/docs/CV.pdf', {method:'HEAD'});
-      if(!res.ok){
-        document.getElementById('download-cv').href = '/docs/CV.md';
+  async function resolveExistingAsset(urls){
+    for (const url of urls) {
+      try {
+        const res = await fetch(url, { method: 'HEAD' });
+        if (res.ok) return url;
+      } catch (e) {
+        // keep trying candidate URLs
       }
-    }catch(e){
-      document.getElementById('download-cv').href = '/docs/CV.md';
     }
+    return urls[0];
+  }
+
+  async function initCVLink(){
+    const cvBtn = document.getElementById('download-cv');
+    if (!cvBtn) return;
+    const resolvedUrl = await resolveExistingAsset(cvCandidates);
+    cvBtn.href = resolvedUrl;
+    cvBtn.setAttribute('target', '_blank');
+    cvBtn.setAttribute('rel', 'noreferrer');
   }
 
   fetchRepos();
-  checkCV();
+  initCVLink();
 })();
