@@ -30,13 +30,13 @@
     <section class="hero section">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1>Building Systems. Engineering Solutions. Turning Complex Problems into Software.</h1>
-          <p class="subtitle">Systems & full-stack developer focused on C++, backend architecture, data-intensive applications, and applied AI for production systems.</p>
-          <p class="intro">I build reliable systems for complex domains: C++ engines, distributed data flows, backend services, and AI-powered experiences. My work combines systems thinking, quantitative analysis, and engineering practicality.</p>
+          <h1>Building systems people can rely on.</h1>
+          <p class="subtitle">Systems and full-stack engineer — C++, backend architecture, data engineering, and applied AI.</p>
+          <p class="intro">I design and build practical, maintainable systems that solve real business problems. The portfolio below shows a balance of systems work, AI prototypes, and product-focused engineering — presented so a hiring manager or stakeholder can quickly understand impact and next steps.</p>
 
           <div class="cta-row">
             <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn" href="https://github.com/brian-kipkoech-kirui" target="_blank" rel="noreferrer">GitHub Profile</a>
+            <a class="btn" href="https://github.com/brian-kipkoech-kirui" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn" href="/docs/KIPKOECH_BRIAN_FlowCV_Resume_2026-10-02%20(2).pdf" target="_blank" rel="noreferrer">Download CV</a>
             <a class="btn" href="/docs/brian_application-2-11.pdf" target="_blank" rel="noreferrer">Certificates</a>
           </div>
@@ -44,9 +44,9 @@
           <div class="capsule-row">
             <span>C++</span>
             <span>Backend</span>
-            <span>Data Engineering</span>
+            <span>Data</span>
             <span>AI</span>
-            <span>Financial Engineering</span>
+            <span>Financial Eng.</span>
           </div>
         </div>
 
@@ -88,7 +88,7 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Engineering Workspace</p>
-          <h2>Interactive Product Experience</h2>
+          <h2>Interactive Product Demo</h2>
         </div>
 
         <div class="workspace-grid">
@@ -97,24 +97,22 @@
               <span class="dot green"></span>
               <span class="dot amber"></span>
               <span class="dot red"></span>
-              <strong>AI Professional Assistant</strong>
+              <strong>AI Professional Assistant (Interactive Product)</strong>
             </div>
 
             <div class="assistant-body" id="assistant-body" aria-live="polite">
-              <div class="message bot">
-                Hello — I’m Brian’s engineering assistant. Ask about projects, skills, experience, education, SYNTHIA, or recruitment fit.
-              </div>
+              <div class="message bot">Hello — ask about the portfolio, key projects, or how I solve business problems.</div>
             </div>
 
             <div class="assistant-suggested">
-              <button class="chip" data-question="What projects are you most proud of?">Projects</button>
-              <button class="chip" data-question="What is your experience with C++ and systems engineering?">C++ systems</button>
-              <button class="chip" data-question="Can you explain SYNTHIA?">SYNTHIA</button>
+              <button class="chip" data-question="What are your top projects?">Top projects</button>
+              <button class="chip" data-question="How would you fit into our team?">Team fit</button>
+              <button class="chip" data-question="Describe a recent engineering challenge you solved">Engineering challenge</button>
               <button class="chip" data-question="How can I contact you?">Contact</button>
             </div>
 
             <form class="assistant-form" id="assistant-form">
-              <input id="assistant-input" type="text" placeholder="Ask about projects, skills, research, or contacts..." aria-label="Ask the assistant" />
+              <input id="assistant-input" type="text" placeholder="Ask about projects, skills, product demos, or contact..." aria-label="Ask the assistant" />
               <button type="submit">Send</button>
             </form>
           </div>
@@ -124,7 +122,7 @@
               <span class="dot green"></span>
               <span class="dot amber"></span>
               <span class="dot red"></span>
-              <strong>Engineering Terminal</strong>
+              <strong>Command Terminal</strong>
             </div>
 
             <div class="terminal-screen" id="terminal-screen" aria-live="polite">
@@ -133,7 +131,7 @@
 
             <form class="terminal-form" id="terminal-form">
               <label class="sr-only" for="terminal-input">Terminal command</label>
-              <input id="terminal-input" type="text" placeholder="Try: projects, skills, synthia, contact, help" />
+              <input id="terminal-input" type="text" placeholder="Try: help, projects, assistant, contact" />
               <button type="submit">Run</button>
             </form>
           </div>
@@ -141,40 +139,36 @@
       </div>
     </section>
 
-    <section id="explorer" class="section">
+    <!-- Projects section moved up so the portfolio focuses on software engineering -->
+    <section id="projects" class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">System Architecture</p>
-          <h2>SYNTHIA Explorer</h2>
+          <p class="eyebrow">Engineering Evidence</p>
+          <h2>Selected Work</h2>
         </div>
 
-        <div class="explorer-layout">
-          <div class="explorer-menu">
-            <button class="explorer-node active" data-node="ingestion">Ingestion Layer</button>
-            <button class="explorer-node" data-node="fabric">Financial Data Fabric</button>
-            <button class="explorer-node" data-node="worldstate">WorldState Core</button>
-            <button class="explorer-node" data-node="observatory">Observatory</button>
-            <button class="explorer-node" data-node="roadmap">Roadmap</button>
-          </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-meta"><h3>AI Professional Assistant — Interactive Product</h3><p class="muted">Interactive assistant demo showcasing product-focused engineering and recruiter flows.</p></div>
+            <div class="project-body"><p>A live, grounded assistant that answers recruiter and stakeholder questions using the portfolio and CV as its knowledge base. Designed to demonstrate product thinking, clear communication, and practical AI integration.</p><p class="links"><a href="#workspace">Try the demo →</a></p></div>
+          </article>
 
-          <div class="explorer-panel" id="explorer-panel">
-            <h3 id="explorer-title">Ingestion Layer</h3>
-            <p id="explorer-status">Status: Complete</p>
-            <p id="explorer-description">The ingestion layer normalizes market observations from providers and captures provenance, source freshness, and deterministic replay.</p>
-            <ul id="explorer-points">
-              <li>Provider-neutral adapters for financial observations</li>
-              <li>Normalized records and provenance</li>
-              <li>Deterministic replay of recorded sessions</li>
-            </ul>
-            <div class="explorer-links">
-              <a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank" rel="noreferrer">View source</a>
-              <a href="/projects/synthia.html">Technical details</a>
-            </div>
-          </div>
+          <article class="project-card">
+            <div class="project-meta"><h3>SYNTHIA</h3><p class="muted">C++ • Financial data fabric • Deterministic simulation</p></div>
+            <div class="project-body"><p>A C++-first platform for financial observation ingestion, provenance, and world-state modelling. Good for reproducible analysis and simulation. See README for installation and usage.</p><p class="links"><a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank">Repository →</a> <a href="/projects/synthia.html">Technical details →</a></p></div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta"><h3>Financial Sentiment Dashboard</h3><p class="muted">Python • NLP • Dashboard</p></div>
+            <div class="project-body"><p>Sentiment analysis pipelines and a dashboard for near-real-time analysis of finance-related text. Includes notebooks and deployment notes.</p><p class="links"><a href="https://github.com/brian-kipkoech-kirui/Sentimental-Analysis" target="_blank">Repository →</a></p></div>
+          </article>
         </div>
+
+        <div id="repos-list" class="projects-grid" aria-live="polite" style="margin-top:28px"></div>
       </div>
     </section>
 
+    <!-- Quant lab kept but placed after projects so engineering work is primary -->
     <section class="section quant-shell" id="quant-lab">
       <div class="container">
         <div class="section-heading">
@@ -207,6 +201,41 @@
             </form>
             <div class="result-box" id="risk-result">Expected Loss: 18,000.00</div>
             <p class="math-note">EL = Exposure × PD × LGD</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explorer moved after projects and quant lab -->
+    <section id="explorer" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">System Architecture</p>
+          <h2>SYNTHIA Explorer</h2>
+        </div>
+
+        <div class="explorer-layout">
+          <div class="explorer-menu">
+            <button class="explorer-node active" data-node="ingestion">Ingestion Layer</button>
+            <button class="explorer-node" data-node="fabric">Financial Data Fabric</button>
+            <button class="explorer-node" data-node="worldstate">WorldState Core</button>
+            <button class="explorer-node" data-node="observatory">Observatory</button>
+            <button class="explorer-node" data-node="roadmap">Roadmap</button>
+          </div>
+
+          <div class="explorer-panel" id="explorer-panel">
+            <h3 id="explorer-title">Ingestion Layer</h3>
+            <p id="explorer-status">Status: Complete</p>
+            <p id="explorer-description">The ingestion layer normalizes market observations from providers and captures provenance, source freshness, and deterministic replay.</p>
+            <ul id="explorer-points">
+              <li>Provider-neutral adapters for financial observations</li>
+              <li>Normalized records and provenance</li>
+              <li>Deterministic replay of recorded sessions</li>
+            </ul>
+            <div class="explorer-links">
+              <a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank" rel="noreferrer">View source</a>
+              <a href="/projects/synthia.html">Technical details</a>
+            </div>
           </div>
         </div>
       </div>
@@ -263,28 +292,6 @@
       </div>
     </section>
 
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Engineering Evidence</p>
-          <h2>Projects</h2>
-        </div>
-
-        <article class="project-card featured">
-          <div class="project-meta">
-            <h3>SYNTHIA</h3>
-            <p class="muted">C++ • Deterministic Ingestion • Financial WorldState • Simulation</p>
-          </div>
-          <div class="project-body">
-            <p>SYNTHIA is a C++-first financial intelligence and simulation platform focused on deterministic ingestion, provenance, and world-state modelling. It emphasizes trustworthy data pipelines and replayable analysis.</p>
-            <p class="links"><a href="https://github.com/brian-kipkoech-kirui/Synthia" target="_blank">Repository →</a> <a href="/projects/synthia.html">Technical details →</a></p>
-          </div>
-        </article>
-
-        <div id="repos-list" class="projects-grid" aria-live="polite"></div>
-      </div>
-    </section>
-
     <section id="experience" class="section">
       <div class="container">
         <div class="section-heading">
@@ -309,7 +316,6 @@
             <ul>
               <li>Built React + Node.js applications and scalable APIs.</li>
               <li>Integrated OpenAI and other AI services for study and productivity tools.</li>
-              <li>Delivered data-driven dashboards and cloud-hosted prototypes.</li>
             </ul>
           </div>
 
@@ -334,7 +340,6 @@
           <a href="tel:+254718032380">+254 718032380</a>
           <a href="https://github.com/brian-kipkoech-kirui" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.credly.com/users/kipkoech-brian#badge-portfolio" target="_blank" rel="noreferrer">Credly</a>
-          <a href="https://linkedin.com/in/kipkoech-brian-9a4838204/" target="_blank" rel="noreferrer">LinkedIn</a>
           <span>Nairobi, Kenya</span>
         </div>
 
@@ -355,10 +360,10 @@
         <strong id="terminal-popup-title">Engineering Terminal</strong>
       </div>
       <div class="terminal-output" id="terminal-output">
-        <div>Available commands: help, projects, skills, experience, education, synthia, contact, cv</div>
+        <div>Available commands: help, projects, skills, experience, education, assistant, contact, cv</div>
       </div>
       <form id="terminal-popup-form" class="terminal-popup-form">
-        <input type="text" id="terminal-popup-input" placeholder="Try: synthia" aria-label="Terminal command" />
+        <input type="text" id="terminal-popup-input" placeholder="Try: assistant" aria-label="Terminal command" />
         <button type="submit">Run</button>
       </form>
     </div>
@@ -367,4 +372,3 @@
   <script src="/assets/main.js"></script>
 </body>
 </html>
-
