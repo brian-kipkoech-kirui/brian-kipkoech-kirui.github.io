@@ -7,7 +7,7 @@ A small Node.js service for generating portfolio images and videos through Googl
 - `GET /health` — public health check.
 - `POST /v1/images/generate` — generate an image; optionally provide a reference image for editing.
 - `POST /v1/videos/generate` — start a Veo video generation job (returns HTTP 202 and an operation name).
-- `GET /v1/videos/operations/{operationName}` — poll a video job until complete.
+- `GET /v1/videos/status?operationName=...` — poll a video job until complete.
 
 All `/v1` endpoints require `Authorization: Bearer <CHATGPT_ACTIONS_API_KEY>`.
 
@@ -26,7 +26,7 @@ npm run dev
 ## Deploy to Render
 
 1. Create a new **Blueprint** in Render and select this repository.
-2. Render detects `api/render.yaml`; if prompted, use the repository root and the blueprint path `api/render.yaml`.
+2. Render detects the root-level `render.yaml`; it configures the service to build from the `api` directory.
 3. Add `GEMINI_API_KEY` in the Render service environment. Do not put it in GitHub.
 4. Keep the generated `CHATGPT_ACTIONS_API_KEY`; copy it securely for the ChatGPT Action authentication setup.
 5. Deploy and verify `https://YOUR-SERVICE.onrender.com/health`.
