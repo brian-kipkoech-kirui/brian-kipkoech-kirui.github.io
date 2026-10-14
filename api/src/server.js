@@ -115,7 +115,7 @@ app.post("/v1/videos/generate", requireConfig, async (req, res) => {
     return res.status(202).json({
       operationName: operation.name,
       done: Boolean(operation.done),
-      statusUrl: `/v1/videos/operations/${encodeURIComponent(operation.name || "")}`,
+      statusUrl: `/v1/videos/status?operationName=${encodeURIComponent(operation.name || "")}`,
       message: "Video generation started. Poll statusUrl until done is true."
     });
   } catch (error) {
