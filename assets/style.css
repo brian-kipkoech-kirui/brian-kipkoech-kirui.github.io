@@ -220,3 +220,32 @@ h2 { max-width: 700px; margin-bottom: 0; font-size: clamp(2.2rem, 4.5vw, 3.9rem)
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+
+/* Theme switch */
+.theme-toggle { display: inline-flex; align-items: center; gap: 7px; padding: 8px 11px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--ink); cursor: pointer; font-size: .75rem; font-weight: 800; white-space: nowrap; }
+.theme-toggle:hover { border-color: var(--teal); color: var(--teal); }
+html[data-theme="dark"] { color-scheme: dark; --paper: #111918; --paper-deep: #182321; --ink: #edf2ed; --muted: #a5b2ab; --teal: #71cdbb; --teal-soft: #203c36; --line: #34433d; --dark-panel: #0c1413; }
+html[data-theme="dark"] body { background: var(--paper); color: var(--ink); }
+html[data-theme="dark"] .site-header { background: rgba(17,25,24,.94); border-color: #34433d; }
+html[data-theme="dark"] nav a, html[data-theme="dark"] .header-link { color: #b5c2bb; }
+html[data-theme="dark"] .brand-mark { background: #e7eee8; color: #17211e; }
+html[data-theme="dark"] .hero-intro, html[data-theme="dark"] .about-copy, html[data-theme="dark"] .section-intro, html[data-theme="dark"] .project-content > p, html[data-theme="dark"] .toolkit-grid p, html[data-theme="dark"] .timeline-item p:not(.date):not(.organization), html[data-theme="dark"] .organization { color: #aab8b0; }
+html[data-theme="dark"] .hero-footnote, html[data-theme="dark"] .hero-meta, html[data-theme="dark"] .projects-note { color: #87968e; }
+html[data-theme="dark"] .work-section { background: #182321; border-color: var(--line); }
+html[data-theme="dark"] .project-card { background: #1c2926; border-color: #34443d; }
+html[data-theme="dark"] .project-featured { background: #0c1715; border-color: #263b34; }
+html[data-theme="dark"] .filter-button { border-color: #46564f; color: #b2c0b7; }
+html[data-theme="dark"] .filter-button:hover, html[data-theme="dark"] .filter-button.is-active { background: #e7eee8; border-color: #e7eee8; color: #17211e; }
+html[data-theme="dark"] .project-state, html[data-theme="dark"] .tag-list span { border-color: #46564f; color: #aab9b0; }
+html[data-theme="dark"] .skills-section { background: var(--paper); }
+html[data-theme="dark"] .experience-section { background: var(--paper-deep); border-color: var(--line); }
+html[data-theme="dark"] .timeline-item { border-color: #53645b; }
+html[data-theme="dark"] .contact-section, html[data-theme="dark"] .site-footer { background: #080f0e; }
+html[data-theme="dark"] .assistant-panel { background: #1b2925; border-color: #405149; color: #edf2ed; }
+html[data-theme="dark"] .assistant-heading > button { color: #edf2ed; }
+html[data-theme="dark"] .assistant-answer { background: #2b3b34; color: #e0ebe3; }
+html[data-theme="dark"] .assistant-user { background: #244b42; color: #e1f3eb; }
+html[data-theme="dark"] .assistant-prompts button, html[data-theme="dark"] .assistant-form input { background: #14201c; border-color: #405149; color: #e5eee7; }
+html[data-theme="dark"] .assistant-disclaimer { color: #93a198; }
+@media (max-width: 680px) { .theme-toggle { margin-left: auto; } }
