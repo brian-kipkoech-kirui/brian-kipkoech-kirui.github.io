@@ -21,6 +21,7 @@
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme"><span aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span></button>
       <a class="header-link" href="/docs/KIPKOECH_BRIAN_FlowCV_Resume_2026-10-02%20(2).pdf" target="_blank" rel="noreferrer">View CV <span aria-hidden="true">↗</span></a>
     </div>
   </header>
@@ -223,5 +224,29 @@
     <p class="assistant-disclaimer">Curated portfolio guide · Not a live AI service</p>
   </aside>
   <script src="/assets/portfolio-assistant.js" defer></script>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const button = document.getElementById('theme-toggle');
+      if (!button) return;
+      const label = button.querySelector('.theme-toggle-label');
+      const icon = button.querySelector('[aria-hidden="true"]');
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('portfolio-theme'); } catch (_) {}
+      const applyTheme = (theme) => {
+        root.dataset.theme = theme;
+        const dark = theme === 'dark';
+        label.textContent = dark ? 'Light mode' : 'Dark mode';
+        icon.textContent = dark ? '☀' : '☾';
+        button.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      };
+      applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+      button.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try { localStorage.setItem('portfolio-theme', next); } catch (_) {}
+      });
+    })();
+  </script>
 </body>
 </html>
