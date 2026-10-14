@@ -83,13 +83,13 @@ paths:
                   operationName: { type: string }
                   done: { type: boolean }
                   statusUrl: { type: string }
-  /v1/videos/operations/{operationName}:
+  /v1/videos/status:
     get:
       operationId: getVideoStatus
       summary: Poll a video generation job
       parameters:
         - name: operationName
-          in: path
+          in: query
           required: true
           schema: { type: string }
       responses:
