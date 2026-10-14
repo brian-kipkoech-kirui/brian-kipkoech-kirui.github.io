@@ -127,7 +127,7 @@ app.post("/v1/videos/generate", requireConfig, async (req, res) => {
 app.get("/v1/videos/operations/:operationName(*)", requireConfig, async (req, res) => {
   try {
     const operationName = decodeURIComponent(req.params.operationName);
-    if (!operationName.startsWith("operations/")) return res.status(400).json({ error: "Invalid operation name" });
+    if (!operationName.startsWith("operations/") || operationName.length > 500) return res.status(400).json({ error: "Invalid operationName query parameter" });
     const operation = await ai.operations.getVideosOperation({ operation: { name: operationName } });
     const samples = operation.response?.generatedVideos || operation.response?.generateVideoResponse?.generatedSamples || [];
     const videos = samples.map((sample) => ({
