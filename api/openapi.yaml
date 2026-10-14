@@ -1,0 +1,118 @@
+openapi: 3.1.0
+info:
+  title: Brian's Gemini Media API
+  version: 1.0.0
+  description: Generate and edit portfolio images and start/poll AI video generation jobs using Google's Gemini API.
+servers:
+  - url: https://YOUR-RENDER-SERVICE.onrender.com
+security:
+  - BearerAuth: []
+paths:
+  /health:
+    get:
+      operationId: healthCheck
+      security: []
+      summary: Check whether the media API is running
+      responses:
+        "200":
+          description: Service health
+  /v1/images/generate:
+    post:
+      operationId: generateImage
+      summary: Generate an image or edit an image using a reference
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [prompt]
+              properties:
+                prompt: { type: string, minLength: 8, maxLength: 4000 }
+                aspectRatio: { type: string, enum: ["1:1", "3:4", "4:3", "9:16", "16:9"], default: "9:16" }
+                numberOfImages: { type: integer, minimum: 1, maximum: 2, default: 1 }
+                referenceImageBase64: { type: string }
+                referenceMimeType: { type: string, enum: ["image/png", "image/jpeg", "image/webp"] }
+      responses:
+        "200":
+          description: Generated image data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  model: { type: string }
+                  images:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        mimeType: { type: string }
+                        base64: { type: string }
+                        dataUrl: { type: string }
+        "400": { description: Invalid request }
+        "401": { description: Unauthorized }
+  /v1/videos/generate:
+    post:
+      operationId: generateVideo
+      summary: Start a video generation job
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [prompt]
+              properties:
+                prompt: { type: string, minLength: 8, maxLength: 4000 }
+                aspectRatio: { type: string, enum: ["9:16", "16:9"], default: "9:16" }
+                durationSeconds: { type: integer, enum: [4, 6, 8], default: 8 }
+                resolution: { type: string, enum: ["720p", "1080p"], default: "720p" }
+                imageBase64: { type: string }
+                imageMimeType: { type: string, enum: ["image/png", "image/jpeg", "image/webp"] }
+      responses:
+        "202":
+          description: Video job accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  operationName: { type: string }
+                  done: { type: boolean }
+                  statusUrl: { type: string }
+  /v1/videos/status:
+    get:
+      operationId: getVideoStatus
+      summary: Poll a video generation job
+      parameters:
+        - name: operationName
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Job status and generated video URI
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  operationName: { type: string }
+                  done: { type: boolean }
+                  error: { type: object, nullable: true }
+                  videos:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        uri: { type: string }
+                        mimeType: { type: string }
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API key

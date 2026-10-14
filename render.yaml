@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: brian-gemini-media-api
+    runtime: node
+    plan: starter
+    rootDir: api
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: CHATGPT_ACTIONS_API_KEY
+        generateValue: true
+      - key: IMAGE_MODEL
+        value: gemini-2.5-flash-image
+      - key: VIDEO_MODEL
+        value: veo-3.1-generate-preview
+      - key: ALLOWED_ORIGINS
+        value: https://chatgpt.com,https://brian-kipkoech-kirui.github.io
